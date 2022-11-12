@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Flex, SimpleGrid } from "@chakra-ui/react";
 import { PageHeader } from "./components/page-header";
 import { GroupTitle } from "./components/group-title";
 import { Filters } from "./components/filters";
 import { Repo } from "./components/repo";
+import moment from "moment";
 
 const Feed = () => {
     const [viewType, setViewType] = useState('grid');
     const [dateJump, setDateJump] = useState('day');
     const [language, setLanguage] = useState();
+
+    
+    // to define date range for groups
+
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState(moment().subtract(1,'day').format())
+
+    // fetch repos based on datejump
+    useEffect(() => {
+        const endDate = moment().subtract(1, 'day').format();
+
+        // as example following will subtract 1 year from yesterday
+        const startDate = moment(endDate).subtract(1, dateJump).format();
+
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }, [dateJump])
+    
 
     return (
         <Box maxWidth='1200px' mx='auto' >
