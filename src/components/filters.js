@@ -26,11 +26,10 @@ export const Filters = (props) => {
                     Monthly
                 </MenuButton>
                 <MenuList>
-                    <MenuItem>Download</MenuItem>
-                    <MenuItem>Create a Copy</MenuItem>
-                    <MenuItem>Mark as Draft</MenuItem>
-                    <MenuItem>Delete</MenuItem>
-                    <MenuItem>Attend a Workshop</MenuItem>
+                    <MenuItem>Daily</MenuItem>
+                    <MenuItem>Weekly</MenuItem>
+                    <MenuItem>Monthly</MenuItem>
+                    <MenuItem>Yearly</MenuItem>
                 </MenuList>
             </Menu>
             <Stack isInline spacing={0} borderWidth={'1px'} rounded='5px' alignItems={'center'} >
