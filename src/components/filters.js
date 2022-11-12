@@ -1,16 +1,31 @@
-import { Box, Flex, Select } from "@chakra-ui/react";
+import { Select, Menu, MenuButton, MenuItem, MenuList, Button, Stack } from "@chakra-ui/react";
 import React from "react";
-import languages from '../data/languages.json'
+import { FaList, FaTable } from "react-icons/fa";
+import { FiCalendar } from "react-icons/fi";
+import languages from '../data/languages.json';
 
 export const Filters = () => {
     return (
-        <Flex >
+        <Stack isInline>
             <Select>
                 {languages.map( (language) => (
                     <option value={language.value}>{language.label}</option>
                 ))}
             </Select>
-        </Flex>
+
+            <Menu>
+                <MenuButton bg='white' borderWidth='1px' fontWeight='400' minWidth='120px' as={Button} leftIcon={<FiCalendar />}>
+                    Monthly
+                </MenuButton>
+                <MenuList>
+                    <MenuItem>Download</MenuItem>
+                    <MenuItem>Create a Copy</MenuItem>
+                    <MenuItem>Mark as Draft</MenuItem>
+                    <MenuItem>Delete</MenuItem>
+                    <MenuItem>Attend a Workshop</MenuItem>
+                </MenuList>
+            </Menu>
+        </Stack>
     );
 }
 
