@@ -25,6 +25,10 @@ export const Filters = () => {
                     <MenuItem>Attend a Workshop</MenuItem>
                 </MenuList>
             </Menu>
+            <Stack isInline spacing={0} borderWidth={'1px'} rounded='5px' alignItems={'center'} >
+                <Button bg={'white'} leftIcon={<FaTable />} roundedRight={0}></Button>
+                <Button bg={'white'} leftIcon={<FaList />} roundedLeft={0}></Button>
+            </Stack>
         </Stack>
     );
 }
