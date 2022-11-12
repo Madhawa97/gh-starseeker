@@ -5,12 +5,27 @@ import { GroupTitle } from "./components/group-title";
 import { Filters } from "./components/filters";
 import { Repo } from "./components/repo";
 import moment from "moment";
+import useFetch from "use-http";
+
+const transformFilters = ({ language, startDate, endDate }) => {
+    const transformedFilters = {};
+    const languageQuery = language ? `language:${language}` : "";
+    const dateQuery = `created:${startDate}..${endDate}`;
+
+    transformedFilters.q = languageQuery + dateQuery;
+    transformedFilters.sort = "stars";
+    transformedFilters.order = "desc";
+
+    return transformedFilters
+}
 
 const Feed = () => {
+    // any api call in progress, any error, method to use for fetching data
+    const { loading, error, get } = useFetch( 'https://api.github.com')
+
     const [viewType, setViewType] = useState('grid');
     const [dateJump, setDateJump] = useState('day');
     const [language, setLanguage] = useState();
-
     
     // to define date range for groups
 
@@ -27,6 +42,24 @@ const Feed = () => {
         setStartDate(startDate);
         setEndDate(endDate);
     }, [dateJump])
+    
+    useEffect(() => {
+        if(!startDate){
+            return
+        }
+
+        //transform the filter to the format that github accepts
+        const filters = transformFilters({ language, startDate, endDate });
+
+        // get query parameter in a form of string
+        const filtersQuery = new URLSearchParams(filters).toString(); 
+        
+        get(`search/repositories?${filtersQuery}`)
+            .then(res => {
+                console.log(res)
+            }
+        )
+    }, [startDate])
     
 
     return (
