@@ -3,6 +3,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { PageHeader } from "./components/page-header";
 import { GroupTitle } from "./components/group-title";
 import { Filters } from "./components/filters";
+import { Repo } from "./components/repo";
 
 const Feed = () => {
     return (
@@ -10,11 +11,12 @@ const Feed = () => {
             <PageHeader />
             <Flex alignItems='center' justifyContent='space-between'>
                 <GroupTitle />
-                <Box>
-
-                </Box>
                 <Filters />
             </Flex>
+
+            <Box>
+                <Repo />
+            </Box>
         </Box>
     );
 }
