@@ -7,15 +7,21 @@ import { Repo } from "./components/repo";
 
 const Feed = () => {
     const [viewType, setViewType] = useState('grid');
+    const [dateJump, setDateJump] = useState('day');
+    const [language, setLanguage] = useState();
 
     return (
         <Box maxWidth='1200px' mx='auto' >
             <PageHeader />
             <Flex alignItems='center' justifyContent='space-between'>
                 <GroupTitle />
-                <Filters 
-                    onViewChangeCallback = {setViewType}
-
+                <Filters
+                    viewType={viewType}
+                    onViewChangeCallback={setViewType}
+                    dateJump={dateJump}
+                    onDateJumpChange={setDateJump}
+                    language={language}
+                    onLanguageChange={setLanguage}
                 />
             </Flex>
 
