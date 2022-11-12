@@ -2,8 +2,8 @@ import { Text, Box, Flex, Heading, Image, Stack, Button } from "@chakra-ui/react
 import React from "react";
 import { GoStar, GoIssueOpened, GoRepoForked } from "react-icons/go";
 
-export const Repo = () => {
-    const isListViewSet = true;
+export const Repo = (props) => {
+    const {isListViewSet} = props;
 
     return (
         <Flex borderWidth={'1px'} p='15px' bg={'white'} rounded={'5px'} alignItems='center'>

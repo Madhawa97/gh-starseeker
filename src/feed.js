@@ -6,6 +6,8 @@ import { Filters } from "./components/filters";
 import { Repo } from "./components/repo";
 
 const Feed = () => {
+    const ListViewStatus = false;
+
     return (
         <Box maxWidth='1200px' mx='auto' >
             <PageHeader />
@@ -15,20 +17,20 @@ const Feed = () => {
             </Flex>
 
             <SimpleGrid columns={3} spacing='20px'>
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
-                <Repo />
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
+                <Repo isListViewSet={ListViewStatus}/>
             </SimpleGrid>
 
             <Flex alignItems='center' justifyContent='center' my='20px'>
