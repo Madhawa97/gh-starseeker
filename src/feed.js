@@ -30,7 +30,11 @@ const Feed = () => {
     // to define date range for groups
 
     const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState(moment().subtract(1,'day').format())
+    const [endDate, setEndDate] = useState(moment().subtract(1,'day').format());
+
+
+    // load repos from API calls 
+    const [repositories, setRepositories] = useState([]);
 
     // fetch repos based on datejump
     useEffect(() => {
@@ -56,7 +60,14 @@ const Feed = () => {
         
         get(`search/repositories?${filtersQuery}`)
             .then(res => {
-                console.log(res)
+                setRepositories([
+                    ...repositories,  // existing repo list
+                    {                 // another object to put the start and end date (to show title)
+                        startDate,
+                        endDate,
+                        items: res.items
+                    }
+                ])
             }
         )
     }, [startDate])
@@ -66,7 +77,10 @@ const Feed = () => {
         <Box maxWidth='1200px' mx='auto' >
             <PageHeader />
             <Flex alignItems='center' justifyContent='space-between'>
-                <GroupTitle />
+                <GroupTitle 
+                    startDate={startDate}
+                    endDate={endDate}
+                />
                 <Filters
                     viewType={viewType}
                     onViewChangeCallback={setViewType}
