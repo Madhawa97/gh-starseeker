@@ -1,11 +1,17 @@
 import { Select, Menu, MenuButton, MenuItem, MenuList, Button, Stack } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaList, FaTable } from "react-icons/fa";
 import { FiCalendar } from "react-icons/fi";
 import languages from '../data/languages.json';
 
-export const Filters = () => {
+export const Filters = (props) => {
+    const { onViewChangeCallback } = props;
     const [viewType, setViewType] = useState('grid');
+
+    useEffect(() => {
+        onViewChangeCallback(viewType);
+    }, [viewType])
+
 
     return (
         <Stack isInline>

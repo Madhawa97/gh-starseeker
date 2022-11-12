@@ -13,7 +13,11 @@ const Feed = () => {
             <PageHeader />
             <Flex alignItems='center' justifyContent='space-between'>
                 <GroupTitle />
-                <Filters />
+                <Filters 
+                    onViewChangeCallback = { (viewType) => {
+                        console.log("from Feed"+ viewType)
+                    }}
+                />
             </Flex>
 
             <SimpleGrid columns={3} spacing='20px'>
