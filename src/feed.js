@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, SimpleGrid } from "@chakra-ui/react";
 import { PageHeader } from "./components/page-header";
 import { GroupTitle } from "./components/group-title";
 import { Filters } from "./components/filters";
@@ -14,9 +14,26 @@ const Feed = () => {
                 <Filters />
             </Flex>
 
-            <Box>
+            <SimpleGrid columns={3} spacing='20px'>
                 <Repo />
-            </Box>
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+                <Repo />
+            </SimpleGrid>
+
+            <Flex alignItems='center' justifyContent='center' my='20px'>
+                <Button colorScheme='blue' variant='solid'>Load Next Group</Button>
+            </Flex>
         </Box>
     );
 }
