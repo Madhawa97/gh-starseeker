@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Image, Button, Flex, Stack, Text, Heading } from "@chakra-ui/react";
+import { FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Feed = () => {
     return (
@@ -13,8 +14,8 @@ const Feed = () => {
                     </Box>
                 </Flex>
                 <Stack isInline>
-                    <Button colorScheme='green' variant='outline'>View Source</Button>
-                    <Button colorScheme='blue' variant='outline' ml='10px'>Tweet</Button>
+                    <Button leftIcon={<FaGithub/>} colorScheme='green' variant='outline'>View Source</Button>
+                    <Button leftIcon={<FaTwitter/>} colorScheme='blue' variant='outline' ml='10px'>Tweet</Button>
                 </Stack>
             </Flex>
         </Box>
