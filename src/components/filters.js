@@ -1,10 +1,12 @@
 import { Select, Menu, MenuButton, MenuItem, MenuList, Button, Stack } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { FaList, FaTable } from "react-icons/fa";
 import { FiCalendar } from "react-icons/fi";
 import languages from '../data/languages.json';
 
 export const Filters = () => {
+    const [viewType, setViewType] = useState('grid');
+
     return (
         <Stack isInline>
             <Select>
@@ -26,8 +28,8 @@ export const Filters = () => {
                 </MenuList>
             </Menu>
             <Stack isInline spacing={0} borderWidth={'1px'} rounded='5px' alignItems={'center'} >
-                <Button bg={'white'} leftIcon={<FaTable />} roundedRight={0}></Button>
-                <Button bg={'white'} leftIcon={<FaList />} roundedLeft={0}></Button>
+                <Button onClick={() => setViewType('grid')} bg={viewType === 'grid' ? 'gray.100' : 'white' } leftIcon={<FaTable />} roundedRight={0}></Button>
+                <Button onClick={() => setViewType('list')} bg={viewType === 'list' ? 'gray.100' : 'white' } leftIcon={<FaList />} roundedLeft={0}></Button>
             </Stack>
         </Stack>
     );
