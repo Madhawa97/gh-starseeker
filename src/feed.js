@@ -14,9 +14,8 @@ const Feed = () => {
             <Flex alignItems='center' justifyContent='space-between'>
                 <GroupTitle />
                 <Filters 
-                    onViewChangeCallback = { (viewType) => {
-                        setViewType(viewType);
-                    }}
+                    onViewChangeCallback = {setViewType}
+
                 />
             </Flex>
 
