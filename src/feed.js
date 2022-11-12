@@ -9,7 +9,7 @@ import useFetch from "use-http";
 
 const transformFilters = ({ language, startDate, endDate }) => {
     const transformedFilters = {};
-    const languageQuery = language ? `language:${language}` : "";
+    const languageQuery = language ? `language:${language} ` : "";
     const dateQuery = `created:${startDate}..${endDate}`;
 
     transformedFilters.q = languageQuery + dateQuery;
@@ -41,7 +41,7 @@ const Feed = () => {
 
         setStartDate(startDate);
         setEndDate(endDate);
-    }, [dateJump])
+    }, [dateJump, language])
     
     useEffect(() => {
         if(!startDate){
