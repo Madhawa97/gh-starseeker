@@ -60,7 +60,7 @@ export const Repo = (props) => {
                 </Stack>
             </Flex>
             
-            {isListViewSet && <Image src={repo.owner.avatar_url} width={'130px'} height={'130px'} rounded={'100%'}>
+            {isListViewSet && <Image src={repo.owner.avatar_url} width={'130px'} height={'130px'} rounded={'100%'} mt={'5px'}>
             </Image>}
         </Flex>
     );
