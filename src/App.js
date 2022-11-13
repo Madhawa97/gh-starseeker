@@ -4,7 +4,7 @@ import { Feed } from './feed';
 
 const App = () => {
     return (
-        <Box width='100vw' minHeight={'100vh'}>
+        <Box width='100vw' minHeight={'100vh'} bg='gray.100'>
             <Feed />
 
         </Box>

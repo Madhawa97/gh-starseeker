@@ -17,7 +17,7 @@ export const Filters = (props) => {
 
     return (
         <Stack isInline>
-            <Select value={language} onChange={(e) => onLanguageChange(e.target.value)}>
+            <Select bg={'white'} value={language} onChange={(e) => onLanguageChange(e.target.value)}>
                 {languages.map( (language) => (
                     <option value={language.value}>{language.label}</option>
                 ))}
@@ -35,8 +35,8 @@ export const Filters = (props) => {
                 </MenuList>
             </Menu>
             <Stack isInline spacing={0} borderWidth={'1px'} rounded='5px' alignItems={'center'} >
-                <Button onClick={() => onViewChangeCallback('grid')} bg={viewType === 'grid' ? 'gray.100' : 'white' } leftIcon={<FaTable />} roundedRight={0}></Button>
-                <Button onClick={() => onViewChangeCallback('list')} bg={viewType === 'list' ? 'gray.100' : 'white' } leftIcon={<FaList />} roundedLeft={0}></Button>
+                <Button onClick={() => onViewChangeCallback('grid')} bg={viewType === 'grid' ? 'gray.400' : 'white' } leftIcon={<FaTable />} roundedRight={0}></Button>
+                <Button onClick={() => onViewChangeCallback('list')} bg={viewType === 'list' ? 'gray.400' : 'white' } leftIcon={<FaList />} roundedLeft={0}></Button>
             </Stack>
         </Stack>
     );
