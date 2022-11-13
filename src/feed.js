@@ -6,6 +6,7 @@ import { Filters } from "./components/filters";
 import { Repo } from "./components/repo";
 import moment from "moment";
 import useFetch from "use-http";
+import { PageLoader } from "./components/page-loader";
 
 const transformFilters = ({ language, startDate, endDate }) => {
     const transformedFilters = {};
@@ -78,6 +79,9 @@ const Feed = () => {
     return (
         <Box maxWidth='1200px' mx='auto' >
             <PageHeader />
+
+            { repositories.length === 0 && loading && <PageLoader />}
+
             <Flex alignItems='center' justifyContent='space-between'>
                 <GroupTitle 
                     startDate={repositories?.[0]?.startDate} endDate={repositories?.[0]?.endDate}
