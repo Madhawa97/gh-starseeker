@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/gh-starseeker/static/js/main.dc9a990f.js",
+    "main.js": "/gh-starseeker/static/js/main.62cf2e10.js",
     "index.html": "/gh-starseeker/index.html",
-    "main.dc9a990f.js.map": "/gh-starseeker/static/js/main.dc9a990f.js.map"
+    "main.62cf2e10.js.map": "/gh-starseeker/static/js/main.62cf2e10.js.map"
   },
   "entrypoints": [
-    "static/js/main.dc9a990f.js"
+    "static/js/main.62cf2e10.js"
   ]
 }
