@@ -82,7 +82,7 @@ const Feed = () => {
 
             { repositories.length === 0 && loading && <PageLoader />}
 
-            <Flex alignItems='center' justifyContent='space-between'>
+            <Flex alignItems='center' justifyContent='space-between' my={'25px'}>
                 <GroupTitle 
                     startDate={repositories?.[0]?.startDate} endDate={repositories?.[0]?.endDate}
                 />
@@ -100,10 +100,12 @@ const Feed = () => {
                 return (
                     <Box>
                         {(counter > 0) && (
-                            <GroupTitle
-                                startDate={repoGroup.startDate}
-                                endDate={repoGroup.endDate}
-                            />
+                            <Flex justifyContent={'center'} mb={'25px'} mt={'50px'}>
+                                <GroupTitle
+                                    startDate={repoGroup.startDate}
+                                    endDate={repoGroup.endDate}
+                                />
+                            </Flex>
                         )}
                         <SimpleGrid columns={viewType === 'list' ? 1 : 3} spacing='20px'>
                             {repoGroup.items.map((repo) => <Repo isListViewSet={viewType === 'list'} repo={repo} />)}
