@@ -24,7 +24,7 @@ const Feed = () => {
     // any api call in progress, any error, method to use for fetching data
     const { loading, error, get } = useFetch( 'https://api.github.com')
 
-    const [viewType, setViewType] = useState('grid');
+    const [viewType, setViewType] = useState('list');
     const [dateJump, setDateJump] = useState('month');
     const [language, setLanguage] = useState();
     
