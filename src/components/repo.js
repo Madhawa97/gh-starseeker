@@ -16,7 +16,7 @@ export const Repo = (props) => {
                             <Image src={repo.owner.avatar_url} width={'40px'} height={'40px'} rounded={100}>
                             </Image>
                             <Box ml={'10px'}>
-                                <Heading fontSize={'18px'}>{repo.owner.login}</Heading>
+                                <Text fontWeight='bold' fontSize={'18px'}>{repo.owner.login}</Text>
                                 <Text fontSize={'13px'} as='a' href={repo.owner.html_url} target='_blank'>View Profile</Text>
                             </Box>
                         </Flex>
@@ -24,15 +24,15 @@ export const Repo = (props) => {
 
                     <Flex mb={'15px'} flexDir={'column'} mt={'5px'}>
                         {isListViewSet && (
-                            <Stack isInline color='purple.700' >
-                                <Heading as='a' href={repo.owner.html_url} target={'_blank'} fontSize={'23px'}>{repo.owner.login} /</Heading>
-                                <Heading maxWidth={'50vw'} as='a' href={repo.html_url} target={'_blank'} fontSize={'23px'}>{repo.name}</Heading>
-                            </Stack>
+                            <Flex color='purple.700' >
+                                <Text fontWeight='bold' as='a' href={repo.owner.html_url} target={'_blank'} fontSize={'23px'}>{repo.owner.login} /</Text>
+                                <Text fontWeight='bold' maxWidth={'50vw'} as='a' href={repo.html_url} target={'_blank'} fontSize={'23px'}>{repo.name}</Text>
+                            </Flex>
                         )}
                         {!isListViewSet && (
-                            <Box>
-                                <Heading mb={'10px'} as='a' href={repo.html_url} target={'_blank'} color='purple.700' fontSize={'22px'}>{repo.name}</Heading>
-                            </Box>
+                            <Flex>
+                                <Text mb={'10px'} as='a' href={repo.html_url} target={'_blank'} color='purple.700' fontSize={'22px'} fontWeight='bold'>{repo.name}</Text>
+                            </Flex>
                         )}
                         {isListViewSet && (
                             <Box >
