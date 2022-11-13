@@ -93,10 +93,12 @@ const Feed = () => {
             {repositories.map( ( repoGroup, counter)=> {
                 return (
                     <Box>
-                        <GroupTitle
-                            startDate={repoGroup.startDate}
-                            endDate={repoGroup.endDate}
-                        />
+                        {(counter > 0) && (
+                            <GroupTitle
+                                startDate={repoGroup.startDate}
+                                endDate={repoGroup.endDate}
+                            />
+                        )}
                         <SimpleGrid columns={viewType === 'list' ? 1 : 3} spacing='20px'>
                             {repoGroup.items.map((repo) => <Repo isListViewSet={viewType === 'list'} repo={repo} />)}
                         </SimpleGrid>
