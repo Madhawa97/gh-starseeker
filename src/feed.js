@@ -25,7 +25,7 @@ const Feed = () => {
     const { loading, error, get } = useFetch( 'https://api.github.com')
 
     const [viewType, setViewType] = useState('grid');
-    const [dateJump, setDateJump] = useState('day');
+    const [dateJump, setDateJump] = useState('month');
     const [language, setLanguage] = useState();
     
     // to define date range for groups
