@@ -45,6 +45,8 @@ const Feed = () => {
 
         setStartDate(startDate);
         setEndDate(endDate);
+
+        setRepositories([]);
     }, [dateJump, language])
     
     useEffect(() => {
