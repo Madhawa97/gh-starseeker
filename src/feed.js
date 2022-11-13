@@ -107,7 +107,15 @@ const Feed = () => {
             })}
 
             <Flex alignItems='center' justifyContent='center' my='20px'>
-                <Button colorScheme='blue' variant='solid'>Load Next Group</Button>
+                <Button 
+                    isLoading={loading}   // show if its loading
+                    colorScheme='blue' 
+                    variant='solid'
+                    onClick={ () => {
+                        setEndDate(startDate);
+                        setStartDate(moment(endDate).subtract(1, dateJump).format());  // to select the previous month. date, year range
+                    }}
+                >Load Next Group</Button>
             </Flex>
         </Box>
     );
