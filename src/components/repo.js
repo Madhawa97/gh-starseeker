@@ -13,7 +13,7 @@ export const Repo = (props) => {
                 <Flex flexDir={'column'}>
                     {!isListViewSet && (
                         <Flex mb={'10px'} >
-                            <Image src={repo.owner.avatar_url} width={'40px'} height={'40px'} rounded={100}>
+                            <Image mt={'6px'} src={repo.owner.avatar_url} width={'40px'} height={'40px'} rounded={100}>
                             </Image>
                             <Box ml={'10px'}>
                                 <Text fontWeight='bold' fontSize={'18px'}>{repo.owner.login}</Text>
@@ -39,7 +39,7 @@ export const Repo = (props) => {
                                 <Text mb={'10px'} color={'gray.600'} fontSize={'15px'}>
                                     Created at &middot; {moment(repo.created_at).format("MMMM D, YYYY")}
                                 </Text>
-                                <Text color={'gray.800'} fontSize={'15px'}>{repo.description}</Text>
+                                <Text mb={'30px'} color={'gray.800'} fontSize={'15px'}>{repo.description}</Text>
                             </Box>
                         )}
                         {!isListViewSet && (
@@ -53,7 +53,7 @@ export const Repo = (props) => {
                     </Flex>
                 </Flex>
 
-                <Stack isInline position={'absolute'} bottom='15px'>
+                <Stack isInline position={'absolute'} bottom='20px'>
                     <Button as={'a'} cursor={'pointer'} leftIcon={<GoStar />} variant='link' iconSpacing={'4px'} fontSize='15px' _hover={{ textDecor: 'none' }}>{repo.stargazers_count}</Button>
                     <Button as={'a'} cursor={'pointer'} leftIcon={<GoRepoForked />} variant='link' iconSpacing={'4px'} fontSize='15px' _hover={{ textDecor: 'none' }}>{repo.forks_count}</Button>
                     <Button as={'a'} cursor={'pointer'} leftIcon={<GoIssueOpened />} variant='link' iconSpacing={'4px'} fontSize='15px' _hover={{ textDecor: 'none' }}>{repo.open_issues_count}</Button>
