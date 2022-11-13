@@ -8,8 +8,8 @@ export const PageHeader = () => {
         <Flex justifyContent='space-between' alignItems='center' pt='15px'>
             <Brand />
             <Stack isInline>
-                <Button leftIcon={<FaGithub />} colorScheme='green' variant='outline'>View Source</Button>
-                <Button leftIcon={<FaTwitter />} colorScheme='blue' variant='outline' ml='10px'>Tweet</Button>
+                <Button leftIcon={<FaGithub />} colorScheme='green' variant='outline' as='a' href='https://github.com/Madhawa97/gh-starseeker' target={'_blank'}>View Source</Button>
+                <Button leftIcon={<FaTwitter />} colorScheme='blue' variant='outline' ml='10px' as='a' href="https://twitter.com/intent/tweet?text=https://madhawa97.github.io/gh-starseeker/" target={'_blank'}>Tweet</Button>
             </Stack>
         </Flex>
     );
