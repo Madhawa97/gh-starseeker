@@ -78,8 +78,7 @@ const Feed = () => {
             <PageHeader />
             <Flex alignItems='center' justifyContent='space-between'>
                 <GroupTitle 
-                    startDate={startDate}
-                    endDate={endDate}
+                    startDate={repositories?.[0]?.startDate} endDate={repositories?.[0]?.endDate}
                 />
                 <Filters
                     viewType={viewType}
@@ -91,22 +90,19 @@ const Feed = () => {
                 />
             </Flex>
 
-            <SimpleGrid columns={viewType === 'list' ? 1 : 3} spacing='20px'>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-                <Repo isListViewSet={viewType === 'list'}/>
-            </SimpleGrid>
+            {repositories.map( ( repoGroup, counter)=> {
+                return (
+                    <Box>
+                        <GroupTitle
+                            startDate={repoGroup.startDate}
+                            endDate={repoGroup.endDate}
+                        />
+                        <SimpleGrid columns={viewType === 'list' ? 1 : 3} spacing='20px'>
+                            {repoGroup.items.map((repo) => <Repo isListViewSet={viewType === 'list'} repo={repo} />)}
+                        </SimpleGrid>
+                    </Box>
+                );
+            })}
 
             <Flex alignItems='center' justifyContent='center' my='20px'>
                 <Button colorScheme='blue' variant='solid'>Load Next Group</Button>

@@ -3,7 +3,7 @@ import React from "react";
 import { GoStar, GoIssueOpened, GoRepoForked } from "react-icons/go";
 
 export const Repo = (props) => {
-    const {isListViewSet} = props;
+    const { isListViewSet = false, repo } = props;
 
     return (
         <Flex borderWidth={'1px'} p='15px' bg={'white'} rounded={'5px'} alignItems='center'>
